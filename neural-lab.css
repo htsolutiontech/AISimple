@@ -1,0 +1,56 @@
+.neural-lab{--blue:#1c6596;--orange:#ad531b;display:grid;gap:14px}
+.neural-lab h2,.neural-lab h3{margin:0}
+.neural-lab h2{font-size:1.4rem}
+.neural-lab h3{font-size:1.13rem}
+.neural-toolbar,.neural-settings,.neural-graph-card,.neural-result,.neural-trace{padding:15px}
+.neural-toolbar,.neural-card-head,.neural-actions,.neural-counts,.neural-loss-labels{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.neural-toolbar{gap:12px 24px;justify-content:space-between}
+.neural-toolbar label,.neural-settings>label,.neural-probe label{display:grid;gap:4px;font-size:.875rem;font-weight:650}
+.neural-stat{display:grid;font-size:.875rem;color:var(--muted)}
+.neural-stat strong{font-size:1.4rem;color:var(--ink);font-variant-numeric:tabular-nums}
+#nl-run{background:var(--green);border-color:var(--green);color:white}
+#nl-run:hover{background:#075e50}
+.neural-layout{display:grid;grid-template-columns:minmax(160px,.7fr) minmax(300px,2.15fr) minmax(210px,1fr);align-items:start;gap:12px}
+.neural-settings,.neural-result,.neural-graph-card,.neural-trace{min-width:0;display:grid;gap:10px}
+.neural-settings fieldset{margin:0;border:1px solid var(--line);border-radius:8px;padding:8px;display:grid;gap:7px;font-size:.875rem;min-width:0}
+.neural-settings legend{font-weight:700}
+.neural-settings input,.neural-probe input{accent-color:var(--green);min-width:0}
+.neural-card-head{justify-content:space-between}
+.neural-card-head>div:first-child{flex:1 1 180px}
+.neural-counts label{display:flex;gap:4px;align-items:center;font-size:.875rem}
+.neural-counts select{padding-left:6px}
+.neural-graph-wrap{overflow:auto}
+.neural-graph{min-width:370px;background:#f5f8fa;cursor:default}
+.neural-graph .nl-node{cursor:pointer;outline:none}
+.neural-graph .nl-node:focus-visible rect,.neural-graph .nl-node:hover rect{stroke:#122333;stroke-width:3}
+.neural-graph text{font-size:14px;fill:var(--ink);font-weight:650}
+.neural-graph .nl-edge{fill:none;pointer-events:stroke}
+.neural-graph .nl-flow-edge{animation:nl-signal 1s linear infinite}
+@keyframes nl-signal{to{stroke-dashoffset:-28}}
+@media(prefers-reduced-motion:reduce){.neural-graph .nl-flow-edge{animation:none}}
+.neural-legend{display:flex;gap:10px;flex-wrap:wrap}
+.neural-legend span:first-child,.neural-loss-labels span:first-child{color:var(--blue)}
+.neural-legend span:nth-child(2),.neural-loss-labels span:nth-child(2){color:var(--orange)}
+#nl-map,#nl-loss{display:block;width:100%;height:auto;border-radius:8px;background:#f5f8fa}
+#nl-map{cursor:crosshair;touch-action:manipulation}
+.neural-probe{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.neural-probe output,.neural-loss-labels{font-variant-numeric:tabular-nums}
+.neural-loss-labels{font-size:.875rem}
+.neural-detail{overflow-wrap:anywhere;background:#f1f6f7;border-radius:8px;padding:10px 13px}
+.neural-detail p{margin:4px 0 0}
+@media(max-width:1020px){.neural-layout{grid-template-columns:minmax(165px,.65fr) minmax(300px,1.5fr)}.neural-result{grid-column:1/-1;grid-template-columns:minmax(180px,300px) minmax(0,1fr);align-items:start}.neural-result h3{grid-column:1/-1}#nl-map{grid-row:2/span 4}}
+@media(max-width:660px){.neural-layout,.neural-result{grid-template-columns:1fr}#nl-map{grid-row:auto}.neural-toolbar{justify-content:start}}
+#nl-xray-settings{display:grid;gap:8px}
+#nl-xray-settings label{display:grid;gap:3px;font-size:.875rem;font-weight:650}
+#nl-xray-settings select{width:100%;min-width:0}
+#nl-xray-settings figure{margin:0}
+#nl-xray-settings canvas{width:100%;height:auto;display:block;border-radius:8px;background:#111921}
+#nl-xray-settings figcaption{font-size:.8rem;color:var(--muted);margin-top:4px}
+#nl-xray-measurements{margin:0;font-size:.875rem;font-weight:650}
+#nl-map.nl-xray-map{cursor:default}
+#nl-text-settings,#nl-text-form,#nl-text-scores{display:grid;gap:7px}
+#nl-text-form textarea{width:100%;font:inherit;min-width:0;resize:vertical;padding:8px;border:1px solid var(--line);border-radius:8px}
+#nl-text-form label,#nl-text-scores label{font-size:.875rem;font-weight:650}
+#nl-text-scores label{display:flex;justify-content:space-between;gap:5px}
+#nl-text-scores meter{width:100%}
+@media(max-width:1020px){.neural-result.nl-text-result{grid-template-columns:1fr}}
